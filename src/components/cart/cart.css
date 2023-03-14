@@ -1,0 +1,18 @@
+.cart__container__title {
+  text-align: center;
+}
+
+.cart__container {
+  margin: auto;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  padding: 50px;
+  gap: 50px;
+}
+/* 
+.table {
+  box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+} */
