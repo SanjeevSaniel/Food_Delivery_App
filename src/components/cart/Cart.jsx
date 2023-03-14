@@ -73,7 +73,11 @@ const Cart = () => {
   }, [cartTotal]);
 
   if (cart.length === 0)
-    return <p>It seems no items selected for the hunger 🫡.</p>;
+    return (
+      <div class="card">
+        <div class="card-body">It seems no item added for the hunger 🫡.</div>
+      </div>
+    );
 
   return (
     <div className="cart__container">
