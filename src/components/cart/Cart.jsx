@@ -45,28 +45,6 @@ const Cart = () => {
     }
   };
 
-  // function total() {
-  //   let sum = 0;
-  //   for (let item in cart) {
-  //     sum += item.menu.quantity;
-  //   }
-  //   setCartTotal(sum);
-  // }
-
-  // function total() {
-  //   let cartCopy = [...cart];
-  //   let sum = 0;
-  //   if (cartCopy.length !== 0) {
-  //     for (let item of cartCopy) {
-  //       sum += item.quantity;
-  //       console.log(item);
-  //     }
-  //     setNoOfItems(sum);
-  //     setCartTotal(sum);
-  //   }
-  // }
-  // total();
-
   useEffect(() => {
     console.log(cart);
 
@@ -93,6 +71,9 @@ const Cart = () => {
     let sum = cartTotal + cartTotal * 0.03;
     setToPay(sum.toFixed(2));
   }, [cartTotal]);
+
+  if (cart.length === 0)
+    return <p>It seems no items selected for the hunger 🫡.</p>;
 
   return (
     <div className="cart__container">
