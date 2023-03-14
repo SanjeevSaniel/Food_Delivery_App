@@ -24,7 +24,7 @@ const NavbarComponent = () => {
       fixed="top"
     >
       <Container fluid>
-        <Link to={"/genie/Home"} style={{ textDecoration: "none" }}>
+        <Link to={"/Food_Delivery_App"} style={{ textDecoration: "none" }}>
           <Navbar.Brand style={{ fontSize: "30px" }}>
             <img style={{ width: "50px" }} src={Logo} alt="" /> genie
           </Navbar.Brand>
