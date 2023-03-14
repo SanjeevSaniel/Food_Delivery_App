@@ -40,7 +40,7 @@ function App() {
           <Routes>
             <Route path="/cart" element={<Cart />} />
             <Route path="/restaurant/:r_id" element={<Menu />} />
-            <Route path="/" element={<RestaurantApp />} />
+            <Route path="/*" element={<RestaurantApp />} />
           </Routes>
         </RestaurantContext.Provider>
       </CartContext.Provider>
