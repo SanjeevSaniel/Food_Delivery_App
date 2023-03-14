@@ -74,7 +74,7 @@ const Cart = () => {
 
   if (cart.length === 0)
     return (
-      <div class="card">
+      <div class="card" style={{ maxWidth: "fit-content", margin: "auto" }}>
         <div class="card-body">It seems no item added for the hunger 🫡.</div>
       </div>
     );
