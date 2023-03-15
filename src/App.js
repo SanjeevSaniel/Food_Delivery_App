@@ -8,7 +8,7 @@ import Menu from "./components/MenuPage/Menu";
 
 import RestaurantApp from "./components/RestaurantApp/RestaurantApp";
 import Cart from "./components/cart/Cart";
-import SignIn from "./components/SignIn";
+import Form from "./components/Form";
 
 export const RestaurantContext = createContext();
 export const CartContext = createContext();
@@ -40,7 +40,7 @@ function App() {
         <RestaurantContext.Provider value={restaurants}>
           <Routes>
             <Route path="/cart" element={<Cart />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/auth" element={<Form />} />
             <Route path="/restaurant/:r_id" element={<Menu />} />
             <Route path="/*" element={<RestaurantApp />} />
           </Routes>

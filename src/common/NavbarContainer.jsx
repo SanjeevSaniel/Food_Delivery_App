@@ -58,7 +58,7 @@ const NavbarComponent = () => {
             </Nav>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <NavLink
-                to={"/signin"}
+                to={"/auth"}
                 style={{
                   margin: "10px",
                   textDecoration: "none",

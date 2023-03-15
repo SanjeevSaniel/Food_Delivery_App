@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Input from "./Input";
 
-const SignIn = () => {
+const Register = () => {
   const [account, setAccount] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -22,16 +23,25 @@ const SignIn = () => {
   return (
     <form className="row g-3" onSubmit={handleSubmit}>
       <Input
-        name="email"
+        name="name"
+        type="text"
+        label="Name"
+        value={account.name}
+        onChange={handleChange}
+        placeholder="Enter your name"
+      />
+
+      <Input
+        name="newEmail"
         type="email"
         label="Email ID"
         value={account.email}
         onChange={handleChange}
-        placeholder="Enter your registered Email ID"
+        placeholder="Enter your Email ID"
       />
 
       <Input
-        name="password"
+        name="newPassword"
         type="password"
         label="Password"
         value={account.password}
@@ -41,11 +51,11 @@ const SignIn = () => {
 
       <div className="col-12">
         <button type="submit" className="btn btn-primary">
-          Sign in
+          Register
         </button>
       </div>
     </form>
   );
 };
 
-export default SignIn;
+export default Register;
