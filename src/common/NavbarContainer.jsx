@@ -4,8 +4,8 @@ import "./Navbar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+// import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Badge from "react-bootstrap/Badge";
 import { Link, NavLink } from "react-router-dom";
@@ -45,7 +45,7 @@ const NavbarComponent = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav id="responsive-navbar-nav">
+            {/* <Nav id="responsive-navbar-nav">
               <Form className="d-flex">
                 <Form.Control
                   type="search"
@@ -55,7 +55,7 @@ const NavbarComponent = () => {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
-            </Nav>
+            </Nav> */}
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <NavLink
                 to={"/auth"}

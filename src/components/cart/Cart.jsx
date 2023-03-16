@@ -81,64 +81,67 @@ const Cart = () => {
 
   return (
     <div className="cart__container">
-      <h6 className="cart__container__title">Cart</h6>
+      <h5 className="cart__container__title">Cart</h5>
 
       <section className="container-grid">
-        <Table bordered className="table">
-          <thead>
-            <tr>
-              <th></th>
-              <th colSpan={1}>Item</th>
-              <th>Quantity</th>
-              <th>Unit Price</th>
-              <th>Price</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody className="table-body">
-            {cart.map((item, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-
-                <td style={{ textAlign: "left" }}>{item.name}</td>
-                <td style={{ fontSize: "20px" }}>
-                  <Button
-                    disabled={item.quantity <= 1 ? true : false}
-                    onClick={() => decreaseQuantity(item)}
-                    variant="outline-secondary"
-                    size="sm"
-                    style={{ padding: "1px 8px" }}
-                  >
-                    -
-                  </Button>
-                  <span style={{ padding: "5px" }}>
-                    {item.quantity ? item.quantity : 0}
-                  </span>
-                  <Button
-                    onClick={() => increaseQuantity(item)}
-                    variant="outline-secondary"
-                    size="sm"
-                    style={{ padding: "1px 6px" }}
-                  >
-                    +
-                  </Button>
-                </td>
-                <td>{item.price}</td>
-                <td>{item.price * item.quantity}</td>
-                <td>
-                  <Button
-                    variant="outline-danger"
-                    size="sm"
-                    onClick={() => removeFromCart(item)}
-                    style={{ padding: "1px 6px" }}
-                  >
-                    X
-                  </Button>
-                </td>
+        <main>
+          <Table bordered className="table">
+            <caption>List of items</caption>
+            <thead>
+              <tr>
+                <th></th>
+                <th colSpan={1}>Item</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Price</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody className="table-body">
+              {cart.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+
+                  <td style={{ textAlign: "left" }}>{item.name}</td>
+                  <td style={{ fontSize: "20px" }}>
+                    <Button
+                      disabled={item.quantity <= 1 ? true : false}
+                      onClick={() => decreaseQuantity(item)}
+                      variant="outline-secondary"
+                      size="sm"
+                      style={{ padding: "1px 8px" }}
+                    >
+                      -
+                    </Button>
+                    <span style={{ padding: "5px" }}>
+                      {item.quantity ? item.quantity : 0}
+                    </span>
+                    <Button
+                      onClick={() => increaseQuantity(item)}
+                      variant="outline-secondary"
+                      size="sm"
+                      style={{ padding: "1px 6px" }}
+                    >
+                      +
+                    </Button>
+                  </td>
+                  <td>{item.price}</td>
+                  <td>{item.price * item.quantity}</td>
+                  <td>
+                    <Button
+                      variant="outline-danger"
+                      size="sm"
+                      onClick={() => removeFromCart(item)}
+                      style={{ padding: "1px 6px" }}
+                    >
+                      X
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </main>
 
         <aside className="cart-totals">
           <h5>Bill Details</h5>
@@ -158,7 +161,9 @@ const Cart = () => {
               </tr>
               <tr>
                 <td>
-                  <span>Govt Taxes & Other Charges</span>
+                  <span>
+                    Govt Taxes & Other Charges <em>(5%)</em>
+                  </span>
                 </td>
                 <td>₹{(cartTotal * 0.03).toFixed(2)}</td>
               </tr>
