@@ -21,9 +21,7 @@ const ProductCard = ({ onRestaurantSelect }) => {
         ? restaurants.filter(
             (restaurant) =>
               restaurant.name.toLowerCase().includes(query.toLowerCase()) ||
-              restaurant.categories
-                .toLowerCase()
-                .includes(query.toLowerCase())
+              restaurant.categories.toLowerCase().includes(query.toLowerCase())
           )
         : restaurants;
       setFilteredRestaurants(result);
