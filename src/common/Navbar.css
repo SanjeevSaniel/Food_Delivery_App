@@ -13,6 +13,10 @@
   border-bottom: 0.5px solid rgb(220, 220, 220);
 }
 
+.logo-text {
+  font-family: "Exo", sans-serif;
+}
+
 .navbar--menus {
   margin: 0;
   padding: 0;

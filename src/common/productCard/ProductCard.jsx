@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import Discount from "../../images/discount.png";
@@ -7,9 +7,26 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { RestaurantContext } from "../../App";
+import { SearchContext } from "./../../components/RestaurantApp/RestaurantApp";
 
 const ProductCard = ({ onRestaurantSelect }) => {
   const restaurants = useContext(RestaurantContext);
+  const [searchQuery] = useContext(SearchContext);
+
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  useEffect(() => {
+    const handleSearch = (query) => {
+      const result = query
+        ? restaurants.filter((restaurant) =>
+            restaurant.name.toLowerCase().includes(query.toLowerCase())
+          )
+        : restaurants;
+      setFilteredRestaurants(result);
+    };
+
+    handleSearch(searchQuery);
+  }, [searchQuery, restaurants]);
 
   return (
     <div>
@@ -23,12 +40,12 @@ const ProductCard = ({ onRestaurantSelect }) => {
             color: "#ffffff",
           }}
         >
-          {restaurants.length}
+          {filteredRestaurants.length}
         </span>
         &nbsp;restaurants
       </h4>
       <Row xs={1} md={3} lg={5} id="restaurants" className=" g-4 ">
-        {restaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <Link
             key={restaurant._id}
             to={`/restaurant/${restaurant._id}`}
