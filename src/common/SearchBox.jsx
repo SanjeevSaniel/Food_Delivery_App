@@ -7,7 +7,7 @@ const SearchBox = ({ value, onChange }) => {
   return (
     <InputGroup className="mb-3 searchbox">
       <span className="input-group-text">
-        <span class="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined">search</span>
       </span>
       <Form.Control
         placeholder="Find your food"
