@@ -18,8 +18,12 @@ const ProductCard = ({ onRestaurantSelect }) => {
   useEffect(() => {
     const handleSearch = (query) => {
       const result = query
-        ? restaurants.filter((restaurant) =>
-            restaurant.name.toLowerCase().includes(query.toLowerCase())
+        ? restaurants.filter(
+            (restaurant) =>
+              restaurant.name.toLowerCase().includes(query.toLowerCase()) ||
+              restaurant.categories
+                .toLowerCase()
+                .includes(query.toLowerCase())
           )
         : restaurants;
       setFilteredRestaurants(result);
